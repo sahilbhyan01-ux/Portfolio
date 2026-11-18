@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sahil | B. Tech ECE Undergraduate & Aspiring VLSI Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            slateDark: '#0b0f19',
+            cardDark: '#111827',
+            cyanGlow: '#00f2fe',
+            blueAccent: '#4facfe',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #e2e8f0;
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 242, 254, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(79, 172, 254, 0.06) 0%, transparent 40%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.72);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(0, 242, 254, 0.45);
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.08);
+      transform: translateY(-2px);
+    }
+    .cyan-gradient-text {
+      background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #111827 !important;
+        background-image: none !important;
+      }
+      nav, .no-print {
+        display: none !important;
+      }
+      .glass-card {
+        background: #ffffff !important;
+        border: 1px solid #cbd5e1 !important;
+        box-shadow: none !important;
+        color: #111827 !important;
+        break-inside: avoid;
+      }
+      .cyan-gradient-text {
+        -webkit-text-fill-color: #0284c7 !important;
+        color: #0284c7 !important;
+      }
+      p, span, li, td, th, h1, h2, h3, h4 {
+        color: #1e293b !important;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 backdrop-blur-md bg-[#0b0f19]/85 border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#home" class="font-mono text-lg font-bold tracking-wider cyan-gradient-text">
+          &lt;SAHIL /&gt;
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
+          <a href="#home" class="hover:text-cyan-400 transition">Profile</a>
+          <a href="#academics" class="hover:text-cyan-400 transition">Academics</a>
+          <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
+          <a href="#achievements" class="hover:text-cyan-400 transition">Achievements</a>
+          <a href="#networking" class="hover:text-cyan-400 transition">Network</a>
+        </div>
+        <button onclick="window.print()" class="no-print px-3.5 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-400/40 text-cyan-300 text-xs font-mono hover:bg-cyan-500/20 transition cursor-pointer">
+          Print / Save PDF
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+    <!-- 1. Hero / Profile Section -->
+    <section id="home" class="glass-card rounded-2xl p-6 sm:p-10">
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+        <!-- Photo Slot -->
+        <div class="flex flex-col items-center shrink-0">
+          <div class="relative group w-40 h-44 rounded-xl overflow-hidden border-2 border-cyan-400/50 bg-slate-900 flex items-center justify-center shadow-lg shadow-cyan-500/10">
+            <img id="profilePhoto" src="" alt="Sahil Portrait" class="hidden w-full h-full object-cover" />
+            <div id="photoPlaceholder" class="text-center p-4">
+              <svg class="w-12 h-12 mx-auto text-cyan-400/60 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              <span class="text-xs font-mono text-slate-400 block">SAHIL</span>
+            </div>
+            <label for="photoUpload" class="no-print absolute inset-0 bg-slate-950/75 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-xs text-cyan-300 font-medium cursor-pointer transition">
+              <span>Upload Photo</span>
+            </label>
+            <input type="file" id="photoUpload" accept="image/*" class="hidden" onchange="previewPhoto(event)" />
+          </div>
+          <span class="mt-2.5 text-xs font-mono text-slate-400">Reg. No: 12622123</span>
+        </div>
+
+        <!-- Bio & Details -->
+        <div class="flex-1 text-center md:text-left space-y-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-mono mb-3">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+              VLSI &amp; Embedded Systems Track
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">SAHIL</h1>
+            <p class="text-base sm:text-lg font-medium cyan-gradient-text mt-1">
+              B. Tech Electronics &amp; Communication Engineering Undergraduate | Aspiring VLSI Engineer
+            </p>
+          </div>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            First-year Electronics and Communication Engineering undergraduate with hands-on experience in hardware prototyping (Arduino). Driven by a strong foundation in mathematics, physics, and programming to solve real-world automation and workflow challenges.
+          </p>
+
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+            <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 block mb-1">Career Aspiration</span>
+            <p class="text-sm text-slate-200">
+              To specialize in basic electronics and hardware and build a career as a <strong>VLSI Engineer</strong> at a leading semiconductor company such as <strong>NVIDIA</strong>.
+            </p>
+          </div>
+
+          <!-- Contact & Social Pills -->
+          <div class="flex flex-wrap justify-center md:justify-start gap-3 pt-1 text-xs font-mono">
+            <a href="mailto:sahilbhyan01@gmail.com" class="px-3 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+              sahilbhyan01@gmail.com
+            </a>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800/90 text-slate-300 border border-slate-700">
+              +91 7404418120
+            </span>
+            <a href="https://www.linkedin.com/in/sahil-bhyan-521a9930a/" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-lg bg-blue-500/15 hover:bg-blue-500/25 text-blue-300 border border-blue-400/30 transition">
+              LinkedIn ↗
+            </a>
+            <a href="https://github.com/sahilbhyan01-ux" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-lg bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-300 border border-cyan-400/30 transition">
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strengths, Interests, Hobbies Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 pt-8 border-t border-slate-800/80">
+        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80">
+          <h3 class="text-xs font-mono uppercase tracking-wider text-cyan-400 mb-2">Key Strengths</h3>
+          <p class="text-xs text-slate-400 font-semibold mb-1">Technical Skills</p>
+          <ul class="text-sm text-slate-300 space-y-1 mb-3">
+            <li>• Programming: C, Python (Beginner)</li>
+            <li>• Electronics: Basic Electronics</li>
+            <li>• Hardware: Arduino Basics</li>
+          </ul>
+          <p class="text-xs text-slate-400 font-semibold mb-1">Soft Skills</p>
+          <p class="text-sm text-slate-300">Problem Solving, Communication, Self-Learning</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80">
+          <h3 class="text-xs font-mono uppercase tracking-wider text-cyan-400 mb-2">Areas of Interest</h3>
+          <div class="flex flex-wrap gap-2 mt-2">
+            <span class="px-2.5 py-1 text-xs rounded-md bg-cyan-950/60 text-cyan-300 border border-cyan-500/20">VLSI Design</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-cyan-950/60 text-cyan-300 border border-cyan-500/20">Basic &amp; Digital Electronics</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-cyan-950/60 text-cyan-300 border border-cyan-500/20">Hardware Prototyping</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-cyan-950/60 text-cyan-300 border border-cyan-500/20">Embedded Systems</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-cyan-950/60 text-cyan-300 border border-cyan-500/20">Workflow Automation</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 flex flex-col justify-between">
+          <div>
+            <h3 class="text-xs font-mono uppercase tracking-wider text-cyan-400 mb-2">Hobbies &amp; Personal</h3>
+            <p class="text-sm text-slate-300">Reading, Sketching</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80">
+            <span class="text-xs font-mono text-slate-400 block">Section &amp; Roll No.</span>
+            <span class="text-sm text-slate-200 font-medium">E1P2602 | Roll No.: 57 (1st Semester)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Academic Profile -->
+    <section id="academics" class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="font-mono text-cyan-400 text-sm">02.</span>
+        <h2 class="text-2xl font-bold text-white">Academic Profile</h2>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-800">
+          <div>
+            <h3 class="text-lg font-semibold text-white">Bachelor of Technology (B. Tech) in Electronics &amp; Communication Engineering</h3>
+            <p class="text-cyan-400 text-sm">Lovely Professional University (LPU) • Section: E1P2602 • Reg. No.: 12622123</p>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-mono self-start sm:self-center">
+            2026 – 2030 (1st Semester)
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="text-xs font-mono uppercase tracking-wider text-cyan-400 mb-3">Relevant Subjects</h4>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li class="flex items-start gap-2"><span class="text-cyan-400">▹</span> Practical Electronics &amp; Arduino Lab</li>
+              <li class="flex items-start gap-2"><span class="text-cyan-400">▹</span> Engineering Physics (Electromagnetism, Lasers &amp; Fiber Optics)</li>
+              <li class="flex items-start gap-2"><span class="text-cyan-400">▹</span> Engineering Mathematics (Differential Calculus, Multivariate Differentiation &amp; Integration, Matrices)</li>
+              <li class="flex items-start gap-2"><span class="text-cyan-400">▹</span> Engineering Graphics / 2D and 3D CAD Modeling (Creo)</li>
+              <li class="flex items-start gap-2"><span class="text-cyan-400">▹</span> Programming in Python</li>
+            </ul>
+          </div>
+
+          <div class="space-y-5">
+            <div>
+              <h4 class="text-xs font-mono uppercase tracking-wider text-cyan-400 mb-3">Technical Skills &amp; Tools</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-lg bg-slate-800/90 border border-slate-700 text-xs font-mono text-slate-200">Arduino Uno</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-800/90 border border-slate-700 text-xs font-mono text-slate-200">ESP32</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-800/90 border border-slate-700 text-xs font-mono text-slate-200">Sensor Integration</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-800/90 border border-slate-700 text-xs font-mono text-slate-200">Circuit Design</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-800/90 border border-slate-700 text-xs font-mono text-slate-200">Python</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-800/90 border border-slate-700 text-xs font-mono text-slate-200">2D/3D CAD (Creo)</span>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-xs font-mono uppercase tracking-wider text-cyan-400 mb-2">Academic Highlights</h4>
+              <ul class="space-y-1.5 text-sm text-slate-300">
+                <li>• Pursuing 1st Semester B. Tech ECE with active hardware lab prototyping.</li>
+                <li>• Developed "Automated College Approval Workflow" web app during Hackathon.</li>
+                <li>• Building hardware prototype for "Smart Parking System".</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Projects Showcase -->
+    <section id="projects" class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="font-mono text-cyan-400 text-sm">03.</span>
+        <h2 class="text-2xl font-bold text-white">Engineering Projects</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Project 1 -->
+        <article class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-5">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-400/30">Hardware &amp; Embedded</span>
+              <span class="text-xs font-mono text-slate-400">Ongoing Prototype</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">Smart Parking System</h3>
+            <p class="text-sm text-slate-400">
+              <strong class="text-slate-200">Problem Addressed:</strong> Manual parking lot management leads to traffic congestion, wasted time searching for vacant spaces, and unauthorized entry.
+            </p>
+            <p class="text-sm text-slate-400">
+              <strong class="text-slate-200">Role:</strong> Hardware &amp; Embedded Developer — Designed circuit schematic, interfaced IR/ultrasonic sensors and servo gate actuators with Arduino Uno, and wrote microcontroller control logic.
+            </p>
+            <p class="text-sm text-slate-300">
+              <strong class="text-cyan-300">Outcome:</strong> Built a functional real-time parking prototype capable of detecting vehicle entry/exit, automating barrier gate movement, and displaying live slot availability.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex flex-wrap gap-2">
+            <span class="text-xs font-mono text-slate-300 bg-slate-800 px-2.5 py-1 rounded">Arduino Uno</span>
+            <span class="text-xs font-mono text-slate-300 bg-slate-800 px-2.5 py-1 rounded">IR/Ultrasonic Sensors</span>
+            <span class="text-xs font-mono text-slate-300 bg-slate-800 px-2.5 py-1 rounded">Servo Actuators</span>
+            <span class="text-xs font-mono text-slate-300 bg-slate-800 px-2.5 py-1 rounded">Circuit Design</span>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-5">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-blue-500/10 text-blue-300 border border-blue-400/30">Hackathon Full-Stack</span>
+              <a href="https://drive.google.com/drive/folders/1tzxu0VI87W_mDw2I8jB1POG-AY2akq1i?usp=drive_link" target="_blank" rel="noopener" class="text-xs font-mono text-cyan-400 hover:underline">
+                Project Folder ↗
+              </a>
+            </div>
+            <h3 class="text-xl font-bold text-white">Automated College Approval Workflow</h3>
+            <p class="text-sm text-slate-400">
+              <strong class="text-slate-200">Problem Addressed:</strong> Traditional paper-based student leave, event, and administrative approval processes cause delays, lack transparency, and create manual tracking overhead.
+            </p>
+            <p class="text-sm text-slate-400">
+              <strong class="text-slate-200">Role:</strong> Contributed to designing the multi-tier approval dashboard, user authentication, and database workflow for students, faculty, and administrators.
+            </p>
+            <p class="text-sm text-slate-300">
+              <strong class="text-cyan-300">Outcome:</strong> Delivered a working full-stack web application that digitizes request submissions, automates multi-level routing, and provides real-time approval status tracking.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex flex-wrap gap-2">
+            <span class="text-xs font-mono text-slate-300 bg-slate-800 px-2.5 py-1 rounded">HTML/CSS</span>
+            <span class="text-xs font-mono text-slate-300 bg-slate-800 px-2.5 py-1 rounded">React</span>
+            <span class="text-xs font-mono text-slate-300 bg-slate-800 px-2.5 py-1 rounded">Node.js</span>
+            <span class="text-xs font-mono text-slate-300 bg-slate-800 px-2.5 py-1 rounded">Python</span>
+            <span class="text-xs font-mono text-slate-300 bg-slate-800 px-2.5 py-1 rounded">Firebase</span>
+            <span class="text-xs font-mono text-slate-300 bg-slate-800 px-2.5 py-1 rounded">MySQL</span>
+            <span class="text-xs font-mono text-slate-300 bg-slate-800 px-2.5 py-1 rounded">REST APIs</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4, 5, 6, 7. Certifications, Competitions, Internships & Leadership -->
+    <section id="achievements" class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="font-mono text-cyan-400 text-sm">04.</span>
+        <h2 class="text-2xl font-bold text-white">Certifications, Competitions &amp; Roadmap</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Certifications & Competitions -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <h3 class="text-base font-semibold text-white flex items-center justify-between">
+            <span>Certifications &amp; Hackathons</span>
+            <span class="text-xs font-mono text-cyan-400">25 Sept 2026</span>
+          </h3>
+          <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between">
+              <h4 class="font-semibold text-cyan-300">CODE-A-THON 2.0 2026</h4>
+              <span class="text-xs font-mono text-slate-400">SIGMA FUSION</span>
+            </div>
+            <p class="text-xs text-slate-300"><strong>Achievement:</strong> Active Participant &amp; Prototype Finisher</p>
+            <p class="text-xs text-slate-400"><strong>Skills Demonstrated:</strong> Rapid Full-Stack Prototyping, Team Collaboration, Time Management, Problem Decomposition</p>
+            <div class="pt-2 flex items-center justify-between text-xs font-mono">
+              <span class="text-slate-400">ID: SF-CODE26-3C2CD373</span>
+              <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:f7ae3086-865f-4dfc-8fac-fbac50de5734" target="_blank" rel="noopener" class="text-cyan-400 hover:underline">
+                View Certificate ↗
+              </a>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <h4 class="text-xs font-mono uppercase tracking-wider text-cyan-400 mb-2">Leadership &amp; Sports Engagement</h4>
+            <p class="text-sm text-slate-300">• Active participant in <strong>Fresher Sports League (FSL)</strong>.</p>
+          </div>
+        </div>
+
+        <!-- Internship Roadmap -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <h3 class="text-base font-semibold text-white flex items-center justify-between">
+            <span>Internship &amp; Career Roadmap</span>
+            <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-400/30">Target: Winter 2027</span>
+          </h3>
+          <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800 space-y-2.5 text-sm">
+            <p class="text-slate-200 font-medium">Current Status: 1st Year Foundation Phase</p>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Currently focusing on mastering core ECE subjects, circuit design, and basic/digital electronics skills before applying for summer/winter technical internships after 1st/2nd year.
+            </p>
+            <p class="text-slate-300 text-xs">
+              <strong class="text-cyan-400">Target Learning Outcome:</strong> Understanding end-to-end semiconductor workflows and technical competencies required for a VLSI Engineer role.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8, 9, 10. Networking, References & Alignment -->
+    <section id="networking" class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="font-mono text-cyan-400 text-sm">05.</span>
+        <h2 class="text-2xl font-bold text-white">Professional Network, References &amp; Alignment</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Networking -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <h3 class="text-base font-semibold text-white">Professional Networking</h3>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li>
+              <strong class="text-cyan-400 block text-xs font-mono uppercase">Industry Interactions</strong>
+              Networking with industry professionals including <strong>Amit Kumar (Siemens)</strong> for career guidance and engineering insights.
+            </li>
+            <li>
+              <strong class="text-cyan-400 block text-xs font-mono uppercase">Alumni Connections</strong>
+              Connected with senior LPU students and alumni working in the semiconductor industry.
+            </li>
+            <li>
+              <strong class="text-cyan-400 block text-xs font-mono uppercase">Faculty Mentors</strong>
+              Course faculty members from the School of Electronics and Electrical Engineering, LPU.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Reference & Career Alignment -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <h3 class="text-base font-semibold text-white">Academic Reference &amp; CA Alignment</h3>
+          <div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800">
+            <span class="text-xs font-mono text-cyan-400 block">Faculty Reference (With Permission)</span>
+            <p class="text-sm font-semibold text-white mt-0.5">Dr. Rosepreet Kaur Bhogal</p>
+            <p class="text-xs text-slate-400">Professor, School of Electrical and Electronics Engineering, Lovely Professional University</p>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            <strong class="text-cyan-300">CA-III &amp; CA-IV Alignment:</strong> This portfolio aligns my Career Aspiration in VLSI Engineering (targeting companies like NVIDIA) with documented B. Tech ECE coursework, hardware prototyping (Smart Parking System), hackathon execution (CODE-A-THON 2.0), and semiconductor industry networking.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-800/80 py-8 mt-12 text-center text-xs font-mono text-slate-500">
+    <p>SAHIL (Reg. No.: 12622123) • B. Tech Electronics &amp; Communication Engineering • Lovely Professional University</p>
+    <p class="mt-1">Verified Digital Portfolio • November 2026</p>
+  </footer>
+
+  <script>
+    function previewPhoto(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = document.getElementById('profilePhoto');
+        const placeholder = document.getElementById('photoPlaceholder');
+        img.src = e.target.result;
+        img.classList.remove('hidden');
+        placeholder.classList.add('hidden');
+      };
+      reader.readAsDataURL(file);
+    }
+  </script>
+</body>
+</html>
